@@ -6,19 +6,32 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GenresPageComponent } from './genres-page/genres-page.component';
 import { AddBookPageComponent } from './add-book-page/add-book-page.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BookService} from "./service/book.service";
+import { BookPageComponent } from './book-page/book-page.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     GenresPageComponent,
-    AddBookPageComponent
+    AddBookPageComponent,
+    BookPageComponent,
+    EditBookComponent
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

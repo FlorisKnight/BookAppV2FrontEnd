@@ -17,4 +17,13 @@ export class Genre {
   get name(): string {
     return this._name;
   }
+
+
+  set id(value: number) {
+    this._id = value;
+  }
+
+  set name(value: string) {
+    this._name = value;
+  }
 }

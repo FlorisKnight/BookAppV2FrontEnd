@@ -1,31 +1,23 @@
 import {Genre} from "./genre.model";
 
-export class Book {
+export class AddBook {
 
   private _id: number;
   private _name: string;
   private _author: string;
   private _genres: Genre[];
 
-/*
-  constructor(id: number, name: string, author: string, genres: string[]) {
-    this.id = id;
-    this.name = name;
-    this.author = author;
-    this.genres = genres;
-  }
 
-  */
   constructor(name: string, author: string) {
     this._name = name;
     this._author = author;
   }
-  /*
+/*
   constructor(name: string, author: string, genres: string[]) {
-  this.name = name;
-  this.author = author;
-  this.genres = genres;
-}
+    this.name = name;
+    this.author = author;
+    this.genres = genres;
+  }
 */
   get id(): number {
     return this._id;
@@ -39,7 +31,7 @@ export class Book {
     return this._author;
   }
 
-  get string(): Genre[] {
+  get genres(): Genre[] {
     return this._genres;
   }
 

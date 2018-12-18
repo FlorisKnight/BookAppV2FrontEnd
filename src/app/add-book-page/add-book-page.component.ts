@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {BookService} from "../service/book.service";
+import {Router} from "@angular/router";
+import {FormBuilder, FormControl, ReactiveFormsModule, FormGroup, Validators} from "@angular/forms";
+import {AddBook} from "../model/addbook.model";
 
 @Component({
   selector: 'app-add-book-page',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddBookPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder,private router: Router, private bookService: BookService) { }
+
+  name=new FormControl();
+  author=new FormControl();
+
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+      var book = new AddBook(this.name.value,this.author.value);
+      this.bookService.createBook(book)
+          .subscribe( data => {
+              this.router.navigate(['']);
+          });
   }
 
 }
