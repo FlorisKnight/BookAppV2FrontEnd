@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BookService} from '../service/Book.service';
+import {BookService} from "../service/book.service";
 import {Router} from "@angular/router";
 import {EditBookModel} from '../model/editBookModel';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
@@ -32,13 +32,11 @@ export class EditBookComponent implements OnInit {
       author: ['', Validators.required],
 
     });
-    /*
     this.bookService.getBookById(+bookId)
       .subscribe( data => {
         this.edit= data;
         this.editForm.setValue(data);
       });
-      */
   }
 
   onSubmit() {
