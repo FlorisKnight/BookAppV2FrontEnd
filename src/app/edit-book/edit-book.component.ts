@@ -41,8 +41,9 @@ export class EditBookComponent implements OnInit {
       */
   }
 
-  /*
+
   onSubmit() {
+    /*
     this.bookService.updateBook(new EditBookModel(this.edit.id,this.name.value,this.author.value))
       .pipe(first())
       .subscribe(
@@ -52,7 +53,8 @@ export class EditBookComponent implements OnInit {
         error => {
           alert(error);
         });
+    */
   }
-  */
+
 
 }
