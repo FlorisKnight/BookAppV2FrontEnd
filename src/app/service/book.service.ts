@@ -23,7 +23,7 @@ export class BookService {
   }
 
   getBookById(id: number) {
-    return this.http.get<EditBookModel>(this.baseUrl + '/' + id);
+    return this.http.get<Book>(this.baseUrl + '/' + id);
   }
 
   createBook(book:AddBook) {
