@@ -13,7 +13,7 @@ import {Book} from "../model/book.model";
 })
 export class EditBookComponent implements OnInit {
 
-  edit:Book;
+  edit:EditBookModel;
   editForm: FormGroup;
   constructor(private formBuilder: FormBuilder,private router: Router, private bookService: BookService) { }
 
@@ -32,11 +32,13 @@ export class EditBookComponent implements OnInit {
       author: ['', Validators.required],
 
     });
+    /*
     this.bookService.getBookById(+bookId)
       .subscribe( data => {
         this.edit= data;
         this.editForm.setValue(data);
       });
+      */
   }
 
   onSubmit() {

@@ -30,6 +30,7 @@ export class BookPageComponent implements OnInit {
       id: [],
       name: ['', Validators.required],
       author: ['', Validators.required],
+      genres: ['', Validators.required],
 
     });
     this.bookService.getBookById(+bookId)
