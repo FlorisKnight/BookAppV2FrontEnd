@@ -13,14 +13,15 @@ import {Book} from "../model/book.model";
 })
 export class EditBookComponent implements OnInit {
 
-  edit:EditBookModel;
+  edit:Book;
   editForm: FormGroup;
   constructor(private formBuilder: FormBuilder,private router: Router, private bookService: BookService) { }
 
   name=new FormControl();
   author=new FormControl();
   ngOnInit() {
-    let bookId = localStorage.getItem('EditBookId');
+    /*
+    let bookId = localStorage.getItem('Book');
     if (!bookId) {
       alert('Invalid action.')
       this.router.navigate(['list-book']);
@@ -37,8 +38,10 @@ export class EditBookComponent implements OnInit {
         this.edit= data;
         this.editForm.setValue(data);
       });
+      */
   }
 
+  /*
   onSubmit() {
     this.bookService.updateBook(new EditBookModel(this.edit.id,this.name.value,this.author.value))
       .pipe(first())
@@ -50,5 +53,6 @@ export class EditBookComponent implements OnInit {
           alert(error);
         });
   }
+  */
 
 }
