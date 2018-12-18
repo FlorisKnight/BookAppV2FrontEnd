@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
 import {BookService} from '../service/Book.service';
 import {Router} from "@angular/router";
 import {EditBookModel} from '../model/editBookModel';
