@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "bookappv2frontend",
+    "staging": "bookappv2frontend"
+  }
+}

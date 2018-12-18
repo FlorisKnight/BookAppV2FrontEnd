@@ -33,12 +33,11 @@ export class BookPageComponent implements OnInit {
       genres: ['', Validators.required],
 
     });
-    /*
     this.bookService.getBookById(+bookId)
       .subscribe( data => {
         this.book = data;
         this.editForm.setValue(data);
-      });*/
+      });
   }
 
 }
