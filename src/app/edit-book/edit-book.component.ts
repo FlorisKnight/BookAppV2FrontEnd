@@ -20,7 +20,7 @@ export class EditBookComponent implements OnInit {
   name=new FormControl();
   author=new FormControl();
   ngOnInit() {
-    let bookId = localStorage.getItem('editBookId');
+    let bookId = localStorage.getItem('EditBookId');
     if (!bookId) {
       alert('Invalid action.')
       this.router.navigate(['list-book']);
