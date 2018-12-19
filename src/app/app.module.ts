@@ -12,6 +12,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BookService} from "./service/book.service";
 import { BookPageComponent } from './book-page/book-page.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
+import { GenreBooksPageComponent } from './genre-books-page/genre-books-page.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { EditBookComponent } from './edit-book/edit-book.component';
     GenresPageComponent,
     AddBookPageComponent,
     BookPageComponent,
-    EditBookComponent
+    EditBookComponent,
+    GenreBooksPageComponent
   ],
   imports: [
     BrowserModule,

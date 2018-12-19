@@ -3,12 +3,12 @@
   <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Book tittle:</label>
-      <input formControlName="name" placeholder="name" name="name" class="form-control" id="name">
+      <input [formControl]="name" formControlName="name" placeholder="name" name="name" class="form-control" id="name">
     </div>
 
     <div class="form-group">
       <label for="author">author:</label>
-      <input formControlName="author" placeholder="author" name="author" class="form-control" id="author">
+      <input formControlName="author" [formControl]="author" placeholder="author" name="author" class="form-control" id="author">
     </div>
 
     <button class="btn btn-success">Update</button>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { BookService} from "../service/book.service";
 import { Book} from "../model/book.model";
+import {BookService} from "../service/book.service";
 
 @Component({
   selector: 'app-home',
@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
           .subscribe( data => {
               this.Books = data;
               console.log("response", data);
-
           });
   }
 
@@ -33,7 +32,7 @@ export class HomeComponent implements OnInit {
     editBook(book: Book): void {
         localStorage.removeItem('editBookId');
         localStorage.setItem('editBookId', book.id.toString());
-        this.router.navigate(['edit-book']);
+        this.router.navigate(['editBook']);
     }
 
     addBook(): void {

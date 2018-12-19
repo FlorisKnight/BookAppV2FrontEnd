@@ -19,9 +19,9 @@ export class EditBookComponent implements OnInit {
 
   name=new FormControl();
   author=new FormControl();
+
   ngOnInit() {
-    /*
-    let bookId = localStorage.getItem('Book');
+    let bookId = localStorage.getItem('editBookId');
     if (!bookId) {
       alert('Invalid action.')
       this.router.navigate(['list-book']);
@@ -38,23 +38,18 @@ export class EditBookComponent implements OnInit {
         this.edit= data;
         this.editForm.setValue(data);
       });
-      */
   }
 
-
   onSubmit() {
-    /*
     this.bookService.updateBook(new EditBookModel(this.edit.id,this.name.value,this.author.value))
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate(['list-book']);
+          this.router.navigate(['']);
         },
         error => {
           alert(error);
         });
-    */
   }
-
 
 }

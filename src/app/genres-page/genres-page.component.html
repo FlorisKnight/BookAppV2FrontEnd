@@ -1,3 +1,9 @@
-<p>
-  genres-page works!
-</p>
+<div class="col-md-6">
+  <h2> User Details</h2>
+    <div *ngIf="Books != null">
+
+    <div *ngFor="let genre of genres">
+      <button class="btn btn-danger" (click)="loadGenre(genre)"> genre.name</button>
+    </div>
+    </div>
+</div>

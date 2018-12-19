@@ -12,14 +12,11 @@ export class BookService {
   baseUrl: string = 'http://localhost:8071/book/';
 
   getBooks():Observable<Book[]> {
-    /* let fakeBooks = [{id: 1, bookTitle: 'test',  authorsName: 'Test'},
-     {id: 2, bookTitle: 'test2',  authorsName: 'Test2'},
-     {id: 3, bookTitle: 'test3',  authorsName: 'Test3'},
-     {id: 4, bookTitle: 'test4',  authorsName: 'Test4'},
-   ];
-   return Observable.of(fakeBooks).delay(5000);*/
-    console.log("book");
     return this.http.get<Book[]>(this.baseUrl+"all");
+  }
+
+  getBooksFromGenre(id: number):Observable<Book[]> {
+    return this.http.get<Book[]>(this.baseUrl+'genre/' + id);
   }
 
   getBookById(id: number) {
@@ -31,7 +28,7 @@ export class BookService {
   }
 
   updateBook(book: EditBookModel) {
-    return this.http.post(this.baseUrl + "save", book);
+    return this.http.post(this.baseUrl + "update", book);
   }
 
   deleteBook(book:Book) {
