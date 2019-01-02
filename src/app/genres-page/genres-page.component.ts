@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import { Genre} from "../model/Genre.model";
-import {GenreService} from "../service/book.service";
-import {Book} from "../model/book.model";
+import { Genre} from "../model/genre.model";
+import {GenreService} from "../service/genre.service";
 
 @Component({
   selector: 'app-genres-page',
@@ -11,7 +10,7 @@ import {Book} from "../model/book.model";
 })
 export class GenresPageComponent implements OnInit {
 
-  private genres:Genre[];
+  genres:Genre[] = [];
 
   constructor(private router: Router, private genreService: GenreService) { }
 
@@ -23,9 +22,10 @@ export class GenresPageComponent implements OnInit {
       });
   }
 
-  loadGenre(genre: Genre): void {
+  loadGenre(id: number): void {
+    console.log(id);
     localStorage.removeItem('genreId');
-    localStorage.setItem('genreId', genre.id.toString());
+    localStorage.setItem('genreId', id.toString());
     this.router.navigate(['genreBook']);
   }
 

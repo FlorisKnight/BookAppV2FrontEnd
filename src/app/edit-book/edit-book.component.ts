@@ -36,20 +36,25 @@ export class EditBookComponent implements OnInit {
     this.bookService.getBookById(+bookId)
       .subscribe( data => {
         this.edit= data;
+        console.log(data);
         this.editForm.setValue(data);
       });
   }
 
   onSubmit() {
-    this.bookService.updateBook(new EditBookModel(this.edit.id,this.name.value,this.author.value))
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate(['']);
-        },
-        error => {
-          alert(error);
-        });
+    if (this.name.value != null && this.author.value != null) {
+      this.bookService.updateBook(new EditBookModel(this.edit.id, this.name.value, this.author.value))
+        .pipe(first())
+        .subscribe(
+          data => {
+            this.router.navigate(['']);
+          },
+          error => {
+            alert(error);
+          });
+    }
+    else
+      window.alert("Fields can't be left open")
   }
 
 }

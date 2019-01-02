@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Validators} from "@angular/forms";
 import {Book} from "../model/book.model";
 import {Router} from "@angular/router";
-import {BookService} from "../service/book.service";
+import {GenreService} from "../service/genre.service";
 
 @Component({
   selector: 'app-genre-books-page',
@@ -12,11 +12,11 @@ import {BookService} from "../service/book.service";
 export class GenreBooksPageComponent implements OnInit {
   Books: Book[] = [];
 
-  constructor(private router: Router, private bookService : BookService) { }
+  constructor(private router: Router, private genreService : GenreService) { }
 
   ngOnInit() {
     let bookId = localStorage.getItem('genreId');
-    this.bookService.getBooksFromGenre(bookId)
+    this.genreService.getBooksFromGenre(bookId)
       .subscribe( data => {
         this.Books = data;
         console.log("response", data);

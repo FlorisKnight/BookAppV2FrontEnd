@@ -13,6 +13,7 @@ import {BookService} from "./service/book.service";
 import { BookPageComponent } from './book-page/book-page.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { GenreBooksPageComponent } from './genre-books-page/genre-books-page.component';
+import {GenreService} from "./service/genre.service";
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { GenreBooksPageComponent } from './genre-books-page/genre-books-page.com
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [BookService],
+  providers: [BookService,GenreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

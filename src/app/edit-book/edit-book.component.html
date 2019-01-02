@@ -3,7 +3,7 @@
   <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Book tittle:</label>
-      <input [formControl]="name" formControlName="name" placeholder="name" name="name" class="form-control" id="name">
+      <input formControlName="name"[formControl]="name" placeholder="name" name="name" class="form-control" id="name">
     </div>
 
     <div class="form-group">

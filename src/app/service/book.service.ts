@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Book } from "../model/book.model";
-import {BookResponseModel} from "../model/book.response.model";
 import {Observable} from "rxjs";
 import {AddBook} from "../model/addbook.model";
 import {EditBookModel} from "../model/editBookModel";
@@ -13,10 +12,6 @@ export class BookService {
 
   getBooks():Observable<Book[]> {
     return this.http.get<Book[]>(this.baseUrl+"all");
-  }
-
-  getBooksFromGenre(id: number):Observable<Book[]> {
-    return this.http.get<Book[]>(this.baseUrl+'genre/' + id);
   }
 
   getBookById(id: number) {
