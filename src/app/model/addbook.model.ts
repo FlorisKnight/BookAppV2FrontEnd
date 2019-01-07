@@ -7,18 +7,17 @@ export class AddBook {
   private _author: string;
   private _genres: Genre[];
 
-
+/*
   constructor(name: string, author: string) {
     this._name = name;
     this._author = author;
   }
-/*
-  constructor(name: string, author: string, genres: string[]) {
+*/
+  constructor(name: string, author: string, genres: Genre[]) {
     this.name = name;
     this.author = author;
     this.genres = genres;
   }
-*/
   get id(): number {
     return this._id;
   }

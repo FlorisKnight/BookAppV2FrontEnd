@@ -17,9 +17,9 @@ export class AddBookPageComponent implements OnInit {
 
   name=new FormControl();
   author=new FormControl();
+  genresList= new FormControl();
 
   genres:Genre[];
-
 
   ngOnInit() {
     this.genreService.getGenres()
@@ -30,8 +30,8 @@ export class AddBookPageComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.name.value != null && this.author.value != null) {
-      var book = new AddBook(this.name.value, this.author.value);
+    if (this.name.value != null && this.author.value != null && this.genresList.value) {
+      var book = new AddBook(this.name.value, this.author.value, this.genresList.value);
       this.bookService.createBook(book)
         .subscribe(data => {
           this.router.navigate(['']);

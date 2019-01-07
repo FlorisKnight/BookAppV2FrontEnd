@@ -8,12 +8,20 @@ export class EditBookModel {
   private _genres: Genre[];
 
 
+  constructor(id: number, name: string, author: string, genres: Genre[]) {
+    this._id = id;
+    this._name = name;
+    this._author = author;
+    this._genres = genres;
+  }
+
+  /*
   constructor(id:number, name: string, author: string) {
     this._id = id;
     this._name = name;
     this._author = author;
   }
-  /*
+
     constructor(name: string, author: string, genres: string[]) {
       this.name = name;
       this.author = author;

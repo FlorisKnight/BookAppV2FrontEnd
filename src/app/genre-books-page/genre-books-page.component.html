@@ -16,7 +16,7 @@
       <td class="hidden">{{book.id}}</td>
       <td>{{book.name}}</td>
       <td>{{book.author}}</td>
-      <td><button class="btn btn-danger" (click)="deleteBook(book)"> Delete</button>
+      <td><button class="btn btn-danger" (click)="viewBook(book)" style="margin-left: 20px;"> View</button><button class="btn btn-danger" (click)="deleteBook(book)"> Delete</button>
         <button class="btn btn-danger" (click)="editBook(book)" style="margin-left: 20px;"> Edit</button></td>
     </tr>
     </tbody>

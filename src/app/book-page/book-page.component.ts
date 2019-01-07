@@ -4,6 +4,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {BookService} from "../service/book.service";
 import {Book} from "../model/book.model";
+import {Genre} from "../model/genre.model";
 
 @Component({
   selector: 'app-book-page',
@@ -14,29 +15,30 @@ export class BookPageComponent implements OnInit {
 
 
   book:Book;
-  editForm: FormGroup;
   constructor(private formBuilder: FormBuilder,private router: Router, private bookService: BookService) { }
 
-  name=new FormControl();
-  author=new FormControl();
+  name:string;
+  author:string;
+  genres:Genre[];
+
   ngOnInit() {
-    let bookId = localStorage.getItem('editBookId');
+    let bookId = localStorage.getItem('viewBookId');
     if (!bookId) {
       alert('Invalid action.')
-      this.router.navigate(['list-book']);
+      this.router.navigate(['']);
       return;
     }
-    this.editForm = this.formBuilder.group({
-      id: [],
-      name: ['', Validators.required],
-      author: ['', Validators.required],
-      genres: ['', Validators.required],
 
-    });
     this.bookService.getBookById(+bookId)
       .subscribe( data => {
         this.book = data;
-        this.editForm.setValue(data);
+        this.name = data.name;
+        this.author = data.author;
+        this.genres = []
+        for (let genre of data.genres){
+          this.genres.push(new Genre(genre._id, genre._name))
+        }
+
       });
   }
 

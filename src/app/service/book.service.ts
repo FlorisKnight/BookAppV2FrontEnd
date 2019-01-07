@@ -18,6 +18,14 @@ export class BookService {
     return this.http.get<Book>(this.baseUrl + '/' + id);
   }
 
+  getTenBooks(index: number){
+    return this.http.get<Book[]>(this.baseUrl + '/amount/' + index);
+  }
+
+  getBookByGenre(id: string) {
+    return this.http.get<Book[]>(this.baseUrl + '/genre/' + id);
+  }
+
   createBook(book:AddBook) {
     return this.http.post(this.baseUrl+"save", book);
   }
@@ -27,7 +35,6 @@ export class BookService {
   }
 
   deleteBook(book:Book) {
-
     return this.http.get(this.baseUrl + "delete/"+ book.id);
   }
 }

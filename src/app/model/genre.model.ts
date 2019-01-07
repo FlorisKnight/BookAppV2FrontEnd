@@ -1,7 +1,7 @@
 export class Genre {
 
-  private _id: number;
-  private _name: string;
+   _id: number;
+   _name: string;
 
 
   constructor(id: number, name: string) {

@@ -39,7 +39,7 @@ export class Book {
     return this._author;
   }
 
-  get string(): Genre[] {
+  get genres(): Genre[] {
     return this._genres;
   }
 

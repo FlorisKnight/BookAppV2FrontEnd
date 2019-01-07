@@ -1,6 +1,6 @@
 <div class="col-md-6">
-  <h2 class="text-center">Edit Book</h2>
-  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <form class="general-width" [formGroup]="editForm" (ngSubmit)="onSubmit()" >
+    <h2 class="text-center">Edit Book</h2>
     <div class="form-group">
       <label for="name">Book tittle:</label>
       <input formControlName="name"[formControl]="name" placeholder="name" name="name" class="form-control" id="name">
@@ -10,6 +10,22 @@
       <label for="author">author:</label>
       <input formControlName="author" [formControl]="author" placeholder="author" name="author" class="form-control" id="author">
     </div>
+
+    <label>Current genres:</label><br/>
+    <label>Select to remove</label><br/>
+    <mat-form-field>
+      <mat-select [formControl]="selectedGenres" multiple>
+        <mat-option *ngFor="let genre of selectedGenresList" [value]="genre" >{{genre._name}}</mat-option>
+      </mat-select>
+    </mat-form-field><br/>
+
+    <label>Genres:</label><br/>
+    <label>Select to add</label><br/>
+    <mat-form-field>
+      <mat-select [formControl]="leftOverGenres" multiple>
+        <mat-option *ngFor="let genre of leftOverGenresList" [value]="genre" >{{genre._name}}</mat-option>
+      </mat-select>
+    </mat-form-field><br/>
 
     <button class="btn btn-success">Update</button>
   </form>

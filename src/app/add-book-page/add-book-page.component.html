@@ -1,6 +1,6 @@
 <div class="col-md-6">
-  <h2 class="text-center">Add Book</h2>
   <form  (ngSubmit)="onSubmit()">
+  <h2 class="text-center">Add Book</h2>
 
     <div class="form-group">
       <label for="name">Book tittle:</label>
@@ -11,6 +11,13 @@
       <label for="author">Last Name:</label>
       <input [formControl]="author" placeholder="author" name="author" class="form-control" id="author">
     </div>
+
+    <label for="author">Genres:</label>
+    <mat-form-field>
+      <mat-select [formControl]="genresList" multiple>
+        <mat-option *ngFor="let genre of genres" [value]="genre">{{genre._name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
     <button class="btn btn-success">Add</button>
   </form>
