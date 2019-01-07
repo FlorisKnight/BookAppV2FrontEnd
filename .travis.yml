@@ -21,8 +21,8 @@ before_script:
 - npm install -g @angular/cli
 
 script:
-- yarn lint
-- yarn build --base-href https://github.com/FlorisKnight/BookAppV2FrontEnd
+- npm run build
+
 deploy:
   provider: pages
   skip_cleanup: true
