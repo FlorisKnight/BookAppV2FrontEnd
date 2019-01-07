@@ -2,26 +2,3 @@ language:
 - node_js
 
 node_js: "11.2.0"
-
-dist: trusty
-sudo: required
-
-branches:
-  only:
-  - master
-
-cache:
-  directories:
-  - node_modules
-
-install:
-- npm install -g yarn
-
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/my-awesome-project
-  on:
-    branch: master
