@@ -17,8 +17,6 @@ cache:
 install:
 - npm install -g yarn
 
-before_script:
-- npm install -g @angular/cli
 
 deploy:
   provider: pages
