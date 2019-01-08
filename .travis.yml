@@ -16,10 +16,9 @@ cache:
 
 install:
 - npm install -g yarn
-
-before_script:
 - npm install -g @angular/cli
 - npm install --save-dev @angular-devkit/build-angular
+
 
 script:
 - yarn lint

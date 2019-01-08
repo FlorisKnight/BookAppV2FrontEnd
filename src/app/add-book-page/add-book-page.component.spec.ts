@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {FormBuilder, FormControl, ReactiveFormsModule, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, ReactiveFormsModule, FormGroup, Validators, FormsModule} from "@angular/forms";
 import { AddBookPageComponent } from './add-book-page.component';
+import {AppComponent} from "../app.component";
+import {RouterTestingModule} from "@angular/router/testing";
+import {HttpClientModule} from "@angular/common/http";
+import {BookService} from "../service/book.service";
+import {GenreService} from "../service/genre.service";
+import {MatSelectModule} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 describe('AddBookPageComponent', () => {
   let component: AddBookPageComponent;
@@ -8,7 +15,9 @@ describe('AddBookPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddBookPageComponent ]
+      imports: [RouterTestingModule, ReactiveFormsModule, HttpClientModule,MatSelectModule,FormsModule, BrowserAnimationsModule],
+      declarations: [ AddBookPageComponent ],
+      providers: [BookService,GenreService,ReactiveFormsModule],
     })
     .compileComponents();
   }));
@@ -19,7 +28,14 @@ describe('AddBookPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render title in a h2 tag', () => {
+    const fixture = TestBed.createComponent(AddBookPageComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h2').textContent).toContain('Add Book');
   });
+
+  /*it('should create', () => {
+    expect(component).toBeTruthy();
+  });*/
 });

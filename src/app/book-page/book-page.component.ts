@@ -9,7 +9,7 @@ import {Genre} from "../model/genre.model";
 @Component({
   selector: 'app-book-page',
   templateUrl: './book-page.component.html',
-  styleUrls: ['./book-page.component.css']
+  styleUrls: ['./book-page.component.css'],
 })
 export class BookPageComponent implements OnInit {
 

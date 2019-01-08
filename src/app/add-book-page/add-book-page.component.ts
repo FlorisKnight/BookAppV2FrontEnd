@@ -6,6 +6,7 @@ import {AddBook} from "../model/addbook.model";
 import {Genre} from "../model/genre.model";
 import {GenreService} from "../service/genre.service";
 
+
 @Component({
   selector: 'app-add-book-page',
   templateUrl: './add-book-page.component.html',
