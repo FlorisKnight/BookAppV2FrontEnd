@@ -39,10 +39,6 @@ import {RouterTestingModule} from "@angular/router/testing";
     ReactiveFormsModule,
     MatSelectModule,
     RouterTestingModule,
-    FormControl,
-    FormBuilder,
-    Validators,
-    RouterModule
   ],
   providers: [BookService,GenreService,ReactiveFormsModule],
   exports: [
