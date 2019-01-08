@@ -15,7 +15,15 @@ cache:
   - node_modules
 
 script:
+- node_modules/karma/bin/karma start my.conf.js --single-run
 - ng build --base-href https://FlorisKnight.github.io/BookAppV2FrontEnd/
+
+before_install:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+
+before_script:
+- npm install
 
 deploy:
   provider: pages
