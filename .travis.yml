@@ -15,7 +15,7 @@ cache:
   - node_modules
 
 script:
-- ng build --base-href https://github.com/FlorisKnight/BookAppV2FrontEnd
+- ng build --base-href https://FlorisKnight.github.io/BookAppV2FrontEnd/
 
 deploy:
   provider: pages
