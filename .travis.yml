@@ -14,14 +14,7 @@ cache:
   directories:
   - node_modules
 
-install:
-- npm install -g yarn
-- npm install -g @angular/cli
-- npm install --save-dev @angular-devkit/build-angular
-
-
 script:
-- yarn lint
 - ng build --base-href https://github.com/FlorisKnight/BookAppV2FrontEnd
 
 deploy:
