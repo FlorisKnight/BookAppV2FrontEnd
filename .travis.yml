@@ -22,7 +22,7 @@ install:
 
 script:
 - yarn lint
-- yarn build --base-href https://github.com/FlorisKnight/BookAppV2FrontEnd
+- ng build --base-href https://github.com/FlorisKnight/BookAppV2FrontEnd
 
 deploy:
   provider: pages
