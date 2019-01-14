@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="general-width">
   <h2> Home</h2>
   <table class="table table-striped">
     <thead>
@@ -15,11 +15,13 @@
       <td class="hidden">{{book.id}}</td>
       <td>{{book.name}}</td>
       <td>{{book.author}}</td>
-      <td><button class="btn btn-danger" (click)="viewBook(book)" style="margin-left: 20px;"> View</button><button class="btn btn-danger" (click)="deleteBook(book)"> Delete</button>
-        <button class="btn btn-danger" (click)="editBook(book)" style="margin-left: 20px;"> Edit</button></td>
+      <td>
+      <button class="btn btn-primary" (click)="viewBook(book)" > View</button><td>
+      <button class="btn btn-danger" (click)="deleteBook(book)"> Delete</button><td>
+      <button class="btn btn-light" (click)="editBook(book)"> Edit</button></td>
     </tr>
     </tbody>
   </table>
-  <button (click)="nextPage()">Next page</button>
   <button (click)="previousPage()">Previous page</button>
+  <button (click)="nextPage()" class="float-right">Next page</button>
 </div>

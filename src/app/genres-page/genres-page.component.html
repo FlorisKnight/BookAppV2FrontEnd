@@ -1,8 +1,10 @@
-<div class="col-md-6">
+<div class="general-width">
   <h2> Genres</h2>
-    <div *ngIf="genres != null">
+  <div class="container">
+    <div *ngIf="genres != null" class="item">
       <div *ngFor="let genre of genres">
-        <button class="btn btn-danger" (click)="loadGenre(genre._id)"> {{genre._name}}</button>
+        <button class="btn btn-primary" (click)="loadGenre(genre._id)"> {{genre._name}}</button>
       </div>
     </div>
+  </div>
 </div>

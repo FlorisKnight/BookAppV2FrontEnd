@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="general-width">
   <form  (ngSubmit)="onSubmit()">
   <h2 class="text-center">Add Book</h2>
 
@@ -18,7 +18,7 @@
         <mat-option *ngFor="let genre of genres" [value]="genre">{{genre._name}}</mat-option>
       </mat-select>
     </mat-form-field>
-
-    <button class="btn btn-success">Add</button>
+    <br>
+    <button class="btn btn-success">Add Book</button>
   </form>
 </div>

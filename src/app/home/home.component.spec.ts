@@ -14,7 +14,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, ReactiveFormsModule, HttpClientModule],
+      imports : [RouterTestingModule, ReactiveFormsModule, HttpClientModule],
       declarations: [ HomeComponent ],
       providers: [BookService,GenreService,ReactiveFormsModule],
 

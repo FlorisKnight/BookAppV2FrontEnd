@@ -1,0 +1,10 @@
+.container {
+  display: flex; /* or inline-flex */
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  margin: auto;
+  float: left;
+}

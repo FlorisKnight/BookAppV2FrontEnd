@@ -52,7 +52,6 @@ export class HomeComponent implements OnInit {
     this.bookService.getTenBooks(this.page)
       .subscribe( data => {
         this.Books = data;
-        console.log("response", data);
       });
   }
 

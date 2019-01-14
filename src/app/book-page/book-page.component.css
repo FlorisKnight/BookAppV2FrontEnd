@@ -1,0 +1,11 @@
+.container {
+  width: 30em;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Decorations */
+.col-xs-4 { color: #fff; padding-bottom: 20px; padding-top: 18px; text-align: center; }
+.col-xs-4:nth-child(3n+1) { background: #c69; }
+.col-xs-4:nth-child(3n+2) { background: #9c6; }
+.col-xs-4:nth-child(3n+3) { background: #69c; }
